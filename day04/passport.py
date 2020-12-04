@@ -13,9 +13,14 @@ class Passport:
 
     hexMatch = re.compile(r'#[a-fA-F0-9]{6}$')
 
+    hasRequiredFields = False
     valid = False
 
     def __init__(self, dictionary):
+        self.hasRequiredFields = self.hasRequiredFields = len(dictionary.keys()) == 8 or (len(dictionary.keys()) == 7 and "cid" not in dictionary.keys())
+        if not self.hasRequiredFields:
+            return
+
         self.birthYear = dictionary.get("byr")
         if self.birthYear is None or len(self.birthYear) != 4 or not self.birthYear.isnumeric() or not 1920 <= int(self.birthYear) <= 2002:
             return
