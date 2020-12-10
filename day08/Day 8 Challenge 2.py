@@ -18,8 +18,6 @@ for index, instruction in enumerate(instructions):
         programs_to_try.append(program)
         indexes_already_replaced.append(index)
 
-print(programs_to_try)
-
 for program_to_try in programs_to_try:
     index = 0
     accumulator = 0
