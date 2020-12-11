@@ -5,7 +5,7 @@ preamble = 25
 
 for index in range(preamble, len(numbers)):
     number = numbers[index]
-    range = numbers[index-preamble:index]
+    range = numbers[index - preamble:index]
     attempts = list(itertools.combinations(range, 2))
     found = False
     for attempt in attempts:
@@ -14,5 +14,3 @@ for index in range(preamble, len(numbers)):
 
     if not found:
         print(number)
-
-    # print(str(range) + str(sum(range)))
